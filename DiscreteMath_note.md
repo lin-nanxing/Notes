@@ -1,10 +1,10 @@
 # 离散数学笔记(个人向)
 ___
-参考资料：
-[1]: [离散数学复习笔记（已完结）](https://blog.csdn.net/qq_51594676/article/details/122138122)
-[2]: [离散数学期末复习笔记【精华版】](https://blog.csdn.net/Sherlooock/article/details/115392090)
-[3]: [离散数学笔记（期末复习用，持续更新…）](https://blog.csdn.net/Until_U/article/details/104774466)
-[4]: [离散数学学习笔记 - chy_2003 - 博客园](https://www.cnblogs.com/chy-2003/p/11414534.html)
+参考资料：    
+[1]: [离散数学复习笔记（已完结）](https://blog.csdn.net/qq_51594676/article/details/122138122)    
+[2]: [离散数学期末复习笔记【精华版】](https://blog.csdn.net/Sherlooock/article/details/115392090)    
+[3]: [离散数学笔记（期末复习用，持续更新…）](https://blog.csdn.net/Until_U/article/details/104774466)    
+[4]: [离散数学学习笔记 - chy_2003 - 博客园](https://www.cnblogs.com/chy-2003/p/11414534.html)    
 [5]: [Markdown/LaTeX 数学公式和符号表](https://zhuanlan.zhihu.com/p/450465546)
 ___
 ## 1.概述
