@@ -1,6 +1,6 @@
 # 离散数学笔记(个人向)
 ___
-参考资料：
+参考资料：    
 [1]: [离散数学复习笔记（已完结）](https://blog.csdn.net/qq_51594676/article/details/122138122)    
 [2]: [离散数学期末复习笔记【精华版】](https://blog.csdn.net/Sherlooock/article/details/115392090)    
 [3]: [离散数学笔记（期末复习用，持续更新…）](https://blog.csdn.net/Until_U/article/details/104774466)    
