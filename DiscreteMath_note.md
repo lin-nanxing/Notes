@@ -1,10 +1,10 @@
 # 离散数学笔记(个人向)
 ___
 参考资料：
-[1]: [离散数学复习笔记（已完结）](https://blog.csdn.net/qq_51594676/article/details/122138122)
-[2]: [离散数学期末复习笔记【精华版】](https://blog.csdn.net/Sherlooock/article/details/115392090)
-[3]: [离散数学笔记（期末复习用，持续更新…）](https://blog.csdn.net/Until_U/article/details/104774466)
-[4]: [离散数学学习笔记 - chy_2003 - 博客园](https://www.cnblogs.com/chy-2003/p/11414534.html)
+[1]: [离散数学复习笔记（已完结）](https://blog.csdn.net/qq_51594676/article/details/122138122)    
+[2]: [离散数学期末复习笔记【精华版】](https://blog.csdn.net/Sherlooock/article/details/115392090)   
+[3]: [离散数学笔记（期末复习用，持续更新…）](https://blog.csdn.net/Until_U/article/details/104774466)   
+[4]: [离散数学学习笔记 - chy_2003 - 博客园](https://www.cnblogs.com/chy-2003/p/11414534.html)   
 [5]: [Markdown/LaTeX 数学公式和符号表](https://zhuanlan.zhihu.com/p/450465546)
 ___
 ## 1.概述
@@ -213,4 +213,336 @@ ___
   
   \*$\{\uparrow\}$和$\{\downarrow\}$都是联结词完备集。
 
+- 谓语逻辑
+  将`原子命题`分解成两部分：`名称`+`行为`，针对谓语分析的逻辑，被称为`谓语逻辑`。**谓语逻辑是命题逻辑的扩充和发展**。
+  > 客观世界中可以独立存在的具体或抽象对象称为`个体`,即`名称`; 表示个体的词称为`个体词`。若个体词以常量的方式表示特定个体，则称之为`个体常量`；若个体词以变量的方式泛指不确定的个体，则称之为`个体变量`。
+  > 表示个体（客体）特征、性质或关系的词，称为`谓词`,即`行为`。
 
+以下为相关性质:
+1. **谓词与个体常量一起可以表示一个命题**;但如果对于一个含有个体变量的谓语函数，由一个谓词和一些个体变元组成的表达式，称为`简单谓词函数`。如果一个函数包含n个个体变元，则称为`n元简单谓词函数`。由简单谓词函数和命题连结词组成的表达式，称为`复合谓词函数`。**谓词函数不是命题，只有当所有的个体变元都用确定的个体代入时，才表示一个命题**。对于一个谓词函数，每个个体变元都有其取值范围，该取值范围，称为是该个体变元的`个体域`（`论域`）
+
+2. 量词
+   ![m17](/jpg/m17.png)
+   1. 全称量词
+      "$\forall$"的几种表示方法:
+      $\forall x \ P(x)$: 对所有的$x$，$x$是$P(x)$情况
+      $\forall x \ \neg P(x)$:  对所有$x$，$x$不是$P(x)$的情况
+      $\neg \forall x \ P(x)$:  并不是对于所有的$x$，$x$是$P(x)$的情况
+      $\neg \forall x \ \neg P(x)$: 不存在一个$x$，使$x$不是$P(x)$的情况
+   2. 存在量词
+      "$\exists$"的几种表示用法：
+      $\exists x \ P(x)$: 存在一个$x$，使$x$是$P(x)$的情况
+      $\exists x \ \neg P(x)$: 存在一个$x$，使$x$不是$P(x)$的情况
+      $\neg \exists x \ P(x)$:  不存在一个$x$，使得$x$是$P(x)$的情况
+      $\neg \exists x \ \neg P(x)$: 不存在一个$x$，使$x$不是$P(x)$的情况
+  
+    例如：
+    ![m18](/jpg/m18.png)
+    \***要明确书写规范，先用括号()括住说明对象，再于其后用括号()括住行为事件**(专用名词是`谓语公式`)
+3. 变元
+   1. 辖域
+      紧接在量词后面括号内的谓语公式    
+      > 如$\forall x \ P(x)$中的$P(x)$
+
+   2. 约束变元
+      **在量词的辖域内，且与量词下标相同的变元。**
+   3. 自由变元
+      当且仅当不受量词的约束。
+4. 范式转化
+   对于一个公式，如果量词均在全式的开头，它们的作用域延伸到整个公式的末尾，则该公式叫做`前束范式`。
+   如何对复杂的命题，将其相近的量词变量合并，考察我们对命题转化的理解。
+   1. **谓词演算的等价式与蕴含式**
+      ![m19](/jpg/m19.png)
+
+   2. **辖域转化**
+      根据谓语公式等价的定义，当个体域$E=\{a_1,a_2,…，a_n\}$，可以得出：
+      1. $(\forall x)P(x) \Leftrightarrow P(a_1)\wedge P(a_2)\wedge…\wedge P(a_n)$  `%任意是交`
+      2. $(\exist x)P(x) \Leftrightarrow P(a_1)\vee P(a_2)\vee…\vee P(a_n)$ `%存在是并`
+      3. **定理**：**提出来或提进去$\neg$会使范围符号变号**
+          $(\forall x)\neg P(x) \Leftrightarrow \neg(\exist x)\ P(x)$
+          $(\exists x)\neg P(x)\Leftrightarrow \neg(\forall x)\ P(x)$
+      4. 分配律
+        $(\forall x)(P(x)\wedge Q(x)) \Leftrightarrow (\forall x)P(x)\wedge (\forall x)Q(x)$`%析取全`
+        $(\exist x)(P(x)\vee Q(x)) \Leftrightarrow (\exist x)P(x)\vee (\exist x)Q(x)$`%合取并`
+      5. 半分配律
+        $ (\forall x)P(x)\vee (\forall x)Q(x)\Rightarrow(\forall x)(P(x)\vee Q(x))$
+        $(\exist x)(P(x)\wedge Q(x)) \Rightarrow (\exist x)P(x)\wedge (\exist x)Q(x)$
+        `%背下来，画韦恩图理解，思路是大包小，大可能包小可能`
+      6. 关系扩张
+        $(\forall x)(P(x)\rightarrow Q(x))\Rightarrow (\forall x)P(x)\rightarrow (\forall x)Q(x)$
+        $(\forall x)(P(x)\leftrightarrow Q(x))\Rightarrow (\forall x)P(x)\leftrightarrow (\forall x)Q(x)$
+        `%任意的对象支持关系的分配扩张`
+      7. 量词作用域的扩张和拓展
+        **一类**："$\wedge$" 和"$\vee$"
+         $(\forall x)(P(x)\wedge Q(y))\Leftrightarrow (\forall x)P(x)\wedge Q(y)$
+         $(\forall x)(P(x)\vee Q(y))\Leftrightarrow (\forall x)P(x)\vee Q(y)$
+         $(\exist x)(P(x)\wedge Q(y))\Leftrightarrow (\exist x)P(x)\wedge Q(y)$
+         $(\exist x)(P(x)\vee Q(y))\Leftrightarrow (\exist x)P(x)\vee Q(y)$
+         **二类**："$\rightarrow$"**注意符号变化**
+         $(\forall x)(P(x)\rightarrow Q(y))\Leftrightarrow (\exist x)P(x)\rightarrow Q(y)$
+         $(\exist x)(P(x)\rightarrow Q(y))\Leftrightarrow (\forall x)P(x)\rightarrow Q(y)$`%变号了`
+         $(\forall y)(P(x)\rightarrow Q(y))\Leftrightarrow P(x)\rightarrow (\forall y)Q(y)$
+         $(\exist y)(P(x)\rightarrow Q(y))\Leftrightarrow P(x)\rightarrow (\exist y)Q(y)$`%没变号`
+         **定理**：打开谓语公式进行辖域分配时，若变量出现在推导符的左边，则打开后改变符号;若出现在推导符的右边时，则不用改变符号
+         > 推导过程
+         > $\because P(x)\rightarrow Q(y)\Leftrightarrow \neg P(x)\vee Q(y)$
+         > $\therefore (\forall x)(P(x)\rightarrow Q(y)) \Leftrightarrow ((\forall x)\neg P(x))\vee Q(y) \Leftrightarrow \neg((\exist x)P(x))\vee Q(y) \Leftrightarrow (\exist x)P(x)\rightarrow Q(y)$
+         $\Box$
+         > 其余也是同理，而$Q(y)$不变号是由于与辖域内的变量不一致，不受影响
+         
+         **在谓词演算中，由于在前提和结论中的谓词公式常带有量词，因而要使用命题演算的等价式和蕴含式需要消去和添加量词。**
+
+    3. 谓词演算的推理推论
+        > 命题推理的基本元素 推理规则：P规则、T规则、CP规则
+        > 推理方法：真值表法、直接证法、间接证法
+        > 推理依据：等价式、蕴含式
+    4. 谓语演算的推理规则
+        > 指定：区域推个体  
+          推广：个体推区域
+
+        **全称指定(`US`)**
+            $(\forall x)P(x)\Rightarrow P(c)$   
+            `%c代表个体域中的任意元素`      
+        **存在指定(`ES`)**    
+            $(\exist x)P(x)\Rightarrow P(c)$    
+            `% 1.c代表个体域中的部分元素`   
+            `% 2.在每次使用时都要引入不同的个体,例如x就是一种个体`
+        **全称推广(`UG`)**
+            $P(c)\Rightarrow (\forall x)P(x)$   
+            `%c要能够代表个体域中的所有元素`
+        **存在推广(`EG`)**    
+            $P(c)\Rightarrow (\exist x)P(x)$    
+            `%显然易见`
+
+      例如：
+          ![m20](/jpg/m20.png)
+          ![m21](/jpg/m21.png)    
+          `%老老实实把推导符左边和右边的式子分别都按照规律一步一步的推导出来，一相比对，若相同则推导成功`  
+
+## 3.集合论
+#### 1.基本概念
+  - `集合`是**包含不同对象的一个无序的聚集**。
+  - 集合元素在集合里面叫做`包含`，例如$A$包含$a$，记作$a\in A$
+  - 描述集合有以下几种方法：    
+    `列举法`、`集合构造法`、`叙述法`    
+    > 上述方法在计算机科学中处于奠基地位,对于循环遍历使用颇多
+  - 当两个集合拥有全部相同的元素，则称两个集合`相等`，写作$\{x\in A\}\cap\{x\in B\}\Leftrightarrow A=B$
+  - 特殊集合
+    1. 空集 $\Phi = \{x|p(x)\wedge \neg p(x)\}$   
+        > $\Phi$ 是任何集合的子集
+    2. 幂集 $P(A) = \{B|B\subseteq A\}$
+        > 幂集是 $A$ 的所有子集的集合
+    3. 全集 $U$或$E$
+        > 在一个**相对固定的范围内**，包含此范围所有元素的集合，称为`全集`
+
+#### 2.集合的运算   
+  - 并($\cup$)
+    1. $A\cup A=A$  `%幂等律`
+    2. $A\cup B = B\cup A$  `%交换律`
+    3. $(A\cup B)\cup C = A\cup(B\cup C)$ `%结合律`
+    4. $A\cup \Phi = A$ `%同一律`
+    5. $A\cup E = E$ `%零律`
+  - 交($\cap$)
+    1. $A\cap A=A$  `%幂等律`
+    2. $A\cap B = B\cap A$  `%交换律`
+    3. $(A\cap B)\cap C = A\cap(B\cap C)$ `%结合律`
+    4. $A\cap \Phi = A$ `%同一律`
+    5. $A\cap E = E$ `%零律`
+   - 补($^\complement$)
+      设$E$为全集，则称$A^\complement$为$A$关于$E$的`补集`，记作    
+      > $A^\complement = \{x|x\in E 且 x\notin A\}$
+   - 差/相对补($-$)   
+      设$A,B$为任意两个集合，$A-B$称为$A$与$B$的`差集`或者`B相对于A的补集`,定义为：   
+      > $A-B = \{x|x\in A 且 x\notin B\}$ 
+   - 子集个数
+     **定理**：若$|A| = n$,即集合$A$有$n$个元素，则$A$的子集个数为$|P(A)| = 2^n$,或记作$2^{|A|}$
+   - 分配律&吸收律
+      1. $A\cap(B\cup C) = (A\cap B)\cup(A\cap C)$
+      2. $A\cup(B\cap C) = (A\cup C)\cap(B\cup C)$ `%分配律`
+      3. $A\cap(A\cup B) = A$
+      4. $A\cup(A\cap B) = A$ `%吸收律`
+   - 其余内容(较重要)
+      1. $(A^\complement)^\complement = A$ `%双重否定律`
+      2. $A\cup A^\complement = E$ `%排中律`
+      3. $A\cap A^\complement = \Phi$ `%矛盾律`
+      4. > $(A\cup B)^\complement = A^\complement \cap B^\complement$
+         > $(A\cup B)^\complement = A^\complement \cap B^\complement$ 
+         > **德摩根律**在集合中的应用，**取补的过程等同于命题的取反**或者矩阵的取逆
+      5. $\Phi^\complement = E$
+         $E^\complement = \Phi$
+      6. > $A - B = A\cap B^\complement$
+         
+      7. $A - B = A - A\cap B$
+      8. > $A \subseteq B \Leftrightarrow B^\complement \cap A^\complement$
+      9. $(B - A)\cup A = B\cup A$
+   - 对称差($\oplus$或$\Delta$)
+     定义：$A\oplus B = (A - B)\cup(B - A)$
+     ![m22](/jpg/m22.webp "即图中红色阴影部分")
+     性质：
+     1. $A\oplus B = B\oplus A$
+     2. $(A\oplus B)\oplus C = A\oplus(B\oplus C)$
+     3. $A\oplus \Phi = A$
+     4. $A\oplus A = \Phi$ `%自己和自己怎们会有剩`
+     5. $A\oplus A^\complement = E$
+     6. $A\cap (B\oplus C) = (A\cap B)\oplus(A\cap C)$ `%分配律仍成立`    
+     7. > 若$A\oplus B = C$，则$A\oplus C = B$ %背下来
+   - **容斥原理**
+     > 极其非常重要，总结就是**奇数个集合加，偶数个集合减**，有点像$ln(x)$   
+
+     设$A$和$B$是任意有限集合，则会有:
+     1. $$|A\cup B| = |A| + |B| - |A\cap B|$$ `%二维的情况`
+     2. $$|\bigcup\limits_{i=1}^n A_i| = \sum\limits_{k=1}^{n}(-1)^{k+1}(\sum\limits_{1\leq i_1\leq\cdots\leq i_k\leq n}|A_{i_1}\cap\cdots \cap A_{i_k}|)$$`%n个集合的情况`
+      ![m23](/jpg/m23.png)
+      **定理**：将集合概念带入概率空间$(\Omega,\mathcal{F},\mathbb{P})$, 则可以在概率论中也适用`容斥原理`,写作：
+          $$\mathbb{P}(\bigcup\limits_{k=1}^{n}A_i)=\sum\limits_{k=1}^{n}(-1)^{k-1}\sum\limits_{I\subset{1,\cdots,n};|I|=k}\mathbb{P}(A_I)$$
+     3. $$|A^\complement\cap B^\complement| = |(A\cup B)^\complement|=|E|-|A\cup B|$$`%德摩根律的应用`
+  - **序偶与笛卡尔积**
+    - 序偶    
+      **有序**二元组的称呼，可以看作一个有顺序的集合，相当于`键值对`，记作$<A,B>$。
+      其中$<A,B> \neq <B,A>$\*
+    - 笛卡尔积
+      - 若$A$与$B$是集合，那么$A$与$B$的笛卡尔积相当于$A\times B$,表示为$$A\times B = \{<a,b>|\forall a\in A, b\in B\}$$
+      - 除此之外，规定$A\times\Phi = \Phi \times A = \Phi$
+      - **笛卡尔积支持分配律和交换律**
+      - $n$个集合的笛卡尔积
+        $$A_1\times A_2\times\cdots \times A_n = (A_1\times A_2\times \cdots\times A_{n-1})\times A_n = \{<x_1,x_2,\cdots ,x_n>|x_i\in A_i\}$$
+      - **定理**:设$A,B,C,D$是四个非空集合，则$A\times B\subseteq C\times D$当且仅当$A\subseteq C且B\subseteq D$
+#### 3.关系
+  - 一个$A$到$B$的`二元关系`就是$A\times B$的子集
+  - **关系具有互斥性**。对于一个笛卡尔积$X\times Y$，里面的任意一个序偶$<x,y>$只能属于或者不属于关系$R$，记作：
+  $<x,y>\in R$ 或者 $<x,y>\notin R$
+  - 几个域名
+    1. **前域**: 在二元关系$R = <x,y>$中所有键值对的键值$\{x\}$，记作:   
+    $$dom\ R=\{x|(\exist y)(<x,y>\in R)\}$$
+    2. **值域**: 在二元关系$R = <x,y>$中所有键值对的值$\{y\}$,记作:   
+    $$ran\ R = \{y|(\exist x)(<x,y>\in R)\}$$
+    3. **域**: 前域和值域的**并集**，泛指与关系$R$有联系的数的范围。记作：    
+    $$FLD\ R = dom\ R \cup ran\ R$$
+  - 关系矩阵
+    对于两个有限集合$A$和$B$, $R$是从$A$到$B$上的一个二元关系，那么则有相应的关系矩阵: $$M = [r_{ij}]_{m\times n}，r_{ij} = <a_i,b_j>$$
+  - 性质:
+    1. > 简而言之为**自反**、**对称**、**传递**三大性质。
+       1. 1. **自反**关系
+      $$\forall x\in X, xRx成立$$   
+       2. 反自反关系
+      自反的修正，不可能出现$xRx$则为反自反
+       3. **对称**关系
+      对于关系$R$, $\forall x,y\in X$,每当$xRy$，就有$yRx$成立。
+       4. 反对称关系
+      即对称的反面:   
+       $$\neg (\exist x,y\in X)(<x,y>\in R\ \And\ <y,x>\in R)$$
+       5. **传递**关系
+       对于$x,y,z\in R$, 若$xRy,yRz$， 则$xRz$成立
+    2. 性质在**关系矩阵**(`邻接矩阵`)上的体现：   
+       1. 自反：对角线元素全是1   
+       2. 对称：对称矩阵
+       3. 传递：结合数据结构理解，或者是**允许间接寻址**
+    3. 性质在**关系图**(`邻接表`\图示)上的体现：   
+       1. 自反：关系图中每个结点均有自回路
+       2. 对称：关系图中若两个结点之间有有向弧，则必成对出现
+       3. 传递：可以路线规划，挨个遍历结点  
+  - 复合关系
+    > $R$是$X$到$Y$的关系，$S$是$Y$到$Z$的关系，则$R$和$S$的复合关系$R\sdot S$称为$R$和$S$的`复合关系`.
+
+    *复合关系即考验元素在关系间是否具有传递性。*
+  - **逆关系**
+    $R$是$X$到$Y$的二元关系，将所有序偶的元素次序颠倒，得到的关系就是$R$的`逆关系`，记作 $R^\complement$
+  - 闭包运算
+    例如以下实例：    
+    ![m24](/jpg/m24.png)
+    ![m25](/jpg/m25.png)
+    ![m26](/jpg/m26.png)
+  - 集合的划分
+    1. 覆盖
+      > 设$A$是一个非空集合，$S=\{S_1,S_2,\cdots,S_n\}$,当    
+      > (1) $S_i \neq \Phi,\ (i=1,2,\cdots,n)$
+      > (2) $S_1\cup S_2\cup \cdots \cup S_n=A\ (i=1,2,\cdots,n)$
+      > 则称$S$是$A$的 `覆盖`
+    2. 划分
+      > 设$S=\{S_1,S_2,\cdots,S_n\}$是$A$的一个覆盖，且$$S_i\cap S_j = \Phi\ (i\neq j,1\leq i,j\leq n)$$,则称每个$S_i$均为$S$这个划分的一个划分
+    **划分一定是覆盖，但覆盖不一定是划分**\*
+#### 4.等价\轨道
+1. 等价类
+   > $R$是$A$上的等价关系，对于$\forall x\in A$,称集合$[x]_R$为由 $x$ 生成的 $R$ 等价类，写作：   
+   $$[x]_R = \{y|y\in A\wedge xRy\}$$
+   或可写作：   
+   $$[x]_R = \{y|y=R(x),x\in A\}$$    
+   简称为`x的等价类`，简单写作：    
+   $$y\in [x]_R\Leftrightarrow xRy$$
+
+   关于等价类有以下的性质：   
+   1. 等价类$[x]_R$是一个集合，且$[x]_R\subseteq A$
+   2. **$[x]_R$中的元素是在等价关系中$R$，与$x$有等价关系$R$的所有元素组成的集合**。
+   3. $[x]_R\neq \Phi\ 当\ x\in [x]_R$
+   4. $\forall x,y\in [z]_R,<x,y>\in R$
+   5. **一种等价关系是对集合的一种划分**，一个元素必将属于且只能属于一个等价类
+   6. $[x]_R=[y]_R$ 当且仅当 $<x,y>\in R$
+   7. $[x]_R\cap[y]_R = \Phi$ 当且仅当 $<x,y>\in R$
+   8. **所有等价类的并是原集合$A$**
+2. 商集
+   - 商集是一类特殊的等价类\划分
+   - 定义：
+     > $R$是$A$上的等价关系，由$R$的所有等价类构成的集合
+     $$A/R = \{[a]_R|a\in A\}$$
+     ，被称为$A$关于$R$的`商集`，记作$A/R$
+
+     例如:    
+     $A$为全体自然数$\{0,1,2,3,\cdots\}$，R为两倍关系，例如$<2,4>\in R$ 而 $<4,2>\notin R$,则$A/R$为所有自然偶数$\{0,2,4,6,\cdots\}$
+   - ![m27](/jpg/m27.png)
+3. 相容关系
+   1. 定义
+    > 对于$A$上的关系，若$R$是**自反**的、**对称**的，则称$R$是`相容关系`。
+   2. **相容类**
+     > 设$R$是集合$A$上的相容关系，若$C\subseteq A$,如果对于$C$中任意两个元素 $a_1,a_2$ 有 $a_1Ra_2$ ,则称$C$是由相容关系$R$产生的`相容类`。
+4. 序关系
+    1. 偏序关系
+      **是偏序即意味着有排序**
+      - > 对于$A$上的关系$R$，若$R$是**自反**的、**反对称**的、**传递**的，则成$R$是$A$的一个`偏序关系`，记为$\leq$
+      - 设$\leq$为偏序关系，$$若 <x,y>\in\ \leq,则记为 x\leq y, 读作"x小于或等于y"$$
+      - 序偶$<A,\leq>$被称为`偏序集`
+      - **覆盖**
+        在偏序集$<A,\leq>$中，设$R$为非空集合$A$上的偏序关系，$x,y\in A$。$$如果x<y且不存在z\in A 使得下x<z<y，则称y覆盖x$$
+    2. 链与反链
+       - 在偏序集合$<A,\leq>$中，对于$A$的一个子集，如果每两个元素都是有关系的，则称该子集为`链`(chain)
+       - 反之，若$A$的子集中每两个元素都是无关系\找不到关系的，则称该子集是`反链`。
+    3. 全序关系
+       - 在偏序集$<A,\leq>$中，**若$A$是一个链**，则称$<A,\leq>$为`全序集合`或者`线序集合`。
+    4. 哈斯图
+       - `哈斯图`是对序关系关系图的一种简化画法,参照[偏序表示中用的哈斯图（hasse diagram）是什么？](https://www.zhihu.com/question/39930682 "来自知乎")
+       - ![m28](/jpg/m28.png)
+       - 具体画法参见[哈斯图的画法介绍](https://zhuanlan.zhihu.com/p/618016174 "来自知乎帖子")或者[哈斯图的画法，以及利用哈斯图寻找极大元之类](https://zhuanlan.zhihu.com/p/27205924 "来自知乎")
+       - ![m29](/jpg/m29png.png)       
+       > 偏序集的Hasse图的作法如下：
+          1. 用小圆圈(或小圆点)表示集合A中的元素;
+          2. 如果a≤b,且a≠b,则将代表a的小圆圈画在代表b的小圆圈的下方。
+          3. 只有当a是b的直接前辈(后裔)时，才将代表a的小圆圈和代表b的小圆圈用直线连接。
+       - **哈斯图的应用**  
+         ![m30](/jpg/m30.png)
+  
+  #### 5.函数
+   - 定义
+      设$F$为二元关系，若任意$x\in dom\ F$都存在唯一的$y\in ran\ F$, 使得$xRy$成立，则称$F$为`函数`。对于函数$F$，如果有$xFy$存在，则记为$y=F(x)$，并称$y$为$F$在$x$的值
+   - 特征
+     1. $F$的前域就是函数$F(x)$的`定义域`，记作 $dom\ F = X$。
+     2. $F$的`值域`为$ran\ F$且满足 $ran\ F\subset Y$, 称集合$Y$是$F$的`共域`
+   - 特殊映射
+     1. 满射
+        > 若$ran\ F = Y$,则称映射为`满射`或`上映射`
+     2. 单射
+        > 不同的$x$对应不同的$y$不会出现重复映射的情况。
+     3. 双射
+        > 若映射$F$**即是满射，又是入射**,则称这个映射是`双射`的    
+
+   - 复合函数
+     > 设$F,G$是函数，则称$F\sdot G$是`复合函数`。
+     > 它满足：
+       (1) $dom(F\cdot G) = \{x|(x\in dom\ F)\wedge(F(x)\in dom\ G)\}$
+       (2) 任意$x\in dom(F\cdot G)$, 有$F\sdot G(x) = F(G(x))$
+   - 反函数
+      > 设$F: A\rightarrow B$，且$F$为双射，当$F^{-1}: B\rightarrow A$存在且为**双射**
+      时，称$F:A\rightarrow B$有`反函数`,也就是$F^{-1}$。
+   - **特征函数**
+      > 1. $X_A: E\rightarrow \{0,1\}$, $X_A(x) = 1 \Leftrightarrow x\in A$ ，称用1代表在集合内，0代表不在集合内的特殊函数$X_A$叫`特征函数`。
+      > 2. 当 $\Phi\subset A\subset E$ 时，$X_A$ 为满射。
+  - 基数
+     
