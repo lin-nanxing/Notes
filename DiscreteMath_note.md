@@ -265,8 +265,8 @@ ___
         $(\forall x)(P(x)\wedge Q(x)) \Leftrightarrow (\forall x)P(x)\wedge (\forall x)Q(x)$`%析取全`
         $(\exist x)(P(x)\vee Q(x)) \Leftrightarrow (\exist x)P(x)\vee (\exist x)Q(x)$`%合取并`
       5. 半分配律
-        $ (\forall x)P(x)\vee (\forall x)Q(x)\Rightarrow(\forall x)(P(x)\vee Q(x))$
-        $(\exist x)(P(x)\wedge Q(x)) \Rightarrow (\exist x)P(x)\wedge (\exist x)Q(x)$
+        $ (\forall\ x)P(x)\vee (\forall x)Q(x)\Rightarrow(\forall\ x)(P(x)\vee Q(x))$
+        $(\exist\ x)(P(x)\wedge Q(x)) \Rightarrow (\exist x)P(x)\wedge (\exist x)Q(x)$
         `%背下来，画韦恩图理解，思路是大包小，大可能包小可能`
       6. 关系扩张
         $(\forall x)(P(x)\rightarrow Q(x))\Rightarrow (\forall x)P(x)\rightarrow (\forall x)Q(x)$
@@ -301,17 +301,17 @@ ___
           推广：个体推区域
 
         **全称指定(`US`)**
-            $(\forall x)P(x)\Rightarrow P(c)$   
+            $(\forall\ x)P(x)\Rightarrow P(c)$   
             `%c代表个体域中的任意元素`      
         **存在指定(`ES`)**    
-            $(\exist x)P(x)\Rightarrow P(c)$    
+            $(\exist\ x)P(x)\Rightarrow P(c)$    
             `% 1.c代表个体域中的部分元素`   
             `% 2.在每次使用时都要引入不同的个体,例如x就是一种个体`
         **全称推广(`UG`)**
-            $P(c)\Rightarrow (\forall x)P(x)$   
+            $P(c)\Rightarrow (\forall\ x)P(x)$   
             `%c要能够代表个体域中的所有元素`
         **存在推广(`EG`)**    
-            $P(c)\Rightarrow (\exist x)P(x)$    
+            $P(c)\Rightarrow (\exist\ x)P(x)$    
             `%显然易见`
 
       例如：
