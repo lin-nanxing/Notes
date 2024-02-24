@@ -157,4 +157,36 @@ ___
   ![g4](/jpg/g4.png)
   ![g5](/jpg/g5.png)
 # 6.如何使用Github来管理我们的代码
-    
+   - 将本地仓库和Github关联起来
+      ![g6](/jpg/g6.png)
+   - 远程仓库地址的两种方式：`HTTPS`和`SSH`。
+      1. HTTPS
+         > 在本地代码`push`到远程仓库的时候需要验证用户名和密码(官方已放弃)
+         > 地址格式：`https://github.com/····/xxx.git`
+      2. SSH
+         > 不用验证用户名和密码，但要在Github上添加对应地址的`SSH公钥`的配置
+         > **使用SSH方式必须要配置SSH密钥。**
+
+         > 给Github配置SSH密钥：    
+         >  1. 打开到库文件夹的根目录
+         >  2. `cd .shh`
+         >  3. `ssh-keygen -t 协议方式 -b 指定生成大小`  %例如`rsa`协议方式和`4096`大小
+         >  4. 进入下一步设置密钥名称。若是第一次访问，则可以用**回车**跳过，系统将自动在`.shh`目录下生成`id_rsa`的密钥文件；    
+         > 若已经生成过`shh`密钥，**千万不要回车**，因为它会覆盖掉原来的`shh`密钥信息且不可逆。对此我们应该输入设置一个新的文件名和密码。此时库中会生成`文件名`和`文件名.pub`两个文件。其中`文件名`文件是生成的私钥，`文件名.pub`文件是生成的公钥。
+         >  5. 复制`文件名.pub`中的公钥文件，到个人账号的`Settings`中的`SSH and 
+         GPG keys`的`New SSH Keys`的选项中添加我们创建的文件名和公钥文件并保存。
+         > 6. 若是第一次访问或者没有更改`SHH`密钥文件名，则不用操作；
+         > 若更改了文件名，我们需要创建一个`config`文件，语法为`tail -5 config`
+         .**在`config`文件内输入以下5行信息：     
+         > \# github
+         > Host github.com
+         > HostName github.com
+         > PreferredAuthentications publickey
+         > TdentityFile ~/.ssh/文件名**
+         > 7. 这样我们就使得本地库和Github之间建立了联系。
+
+         > 地址格式：`git@github.com:····/·xxx.git`
+   - 推送与拉取
+      - `git push`:推送到远程仓库
+      - `git pull`:抓取到本地仓库来
+      - `git clone 仓库地址`：从远程仓库复制一个完整的库到本地
