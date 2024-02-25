@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)file:///C:/Users/Ozawacai/AppData/Local/Temp/crossnote2024125-6180-uv0g4i.uvum.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Git_note</title>
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="./Git_note_files/katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="git-笔记记录个人向">Git 笔记记录(个人向) </h1>
+<hr>
+<h1 id="1git简介">1.Git简介 </h1>
+<ul>
+<li>
+<p>免费开源</p>
+</li>
+<li>
+<p>分布式版本控制系统</p>
+</li>
+<li>
+<p>使用名叫仓库<code>repository</code>的数据库来记录文件的变化，仓库中每个文件都有一个完整的<strong>版本历史纪录</strong>，以方便查看谁在什么时间修改了哪些文件的什么内容。<strong>它还支持将文件恢复到之前的某个版本</strong></p>
+</li>
+<li>
+<p>它大大方便团队间对同一项目的合作，使得项目更改便捷清晰有效。</p>
+</li>
+</ul>
+<blockquote>
+<p>与分布式控制系统相较，还存在一类集中式版本控制系统，如<code>SVN</code>、<code>CVS</code>等。</p>
+</blockquote>
+<ul>
+<li>什么是分布式，<strong>每个人手里都有副本</strong>，凭借着一定的信用协议进行信息的交换那就是分布式。<br>
+Git就是每个人设备里都有完整的库的分布式。完成成员间信息的交换，互相同步一下就可以了。</li>
+</ul>
+<hr>
+<ul>
+<li><em>世界上超过90%的开源项目都在使用Git进行版本控制，足可见它的强大</em></li>
+</ul>
+<h1 id="2git的使用方式">2.Git的使用方式 </h1>
+<ul>
+<li>命令行(Shell或者是cmd)</li>
+<li>图形化界面(GUI)
+<blockquote>
+<p>在Git官网就能找到诸如Git Cilents</p>
+</blockquote>
+</li>
+<li>IDE插件或拓展(Git Bash)</li>
+</ul>
+<h1 id="3git的工作区域与文件状态">3.Git的工作区域与文件状态 </h1>
+<ul>
+<li>
+<p>Git的区域分为<strong>工作区</strong><code>working directory</code>、<strong>暂存区</strong><code>staging area/index</code>以及<strong>本地仓库</strong><code>local repository</code>。</p>
+</li>
+<li>
+<ol>
+<li><em>工作区</em></li>
+</ol>
+<ul>
+<li>又叫<code>工作目录</code>或者<code>本地工作目录</code>，也就是我们自己电脑的目录(文件夹)。</li>
+</ul>
+<ol start="2">
+<li><em>暂存区</em></li>
+</ol>
+<ul>
+<li>又叫<code>索引</code>即<code>index</code>，是一种临时存储区域，用于保存即将提交到Git仓库的修改内容。</li>
+</ul>
+<ol start="3">
+<li><em>本地仓库</em></li>
+</ol>
+<ul>
+<li>就是通过<code>init</code>或者<code>clone</code>生成的仓库，<strong>包含完整的项目历史和元数据</strong>，是Git存储代码和版本信息的主要位置。</li>
+</ul>
+</li>
+<li>
+<p>三者之间的关系类似于a端、b端、c端或者是寄存器、Cache、主存之间的关系。其中工作区提交到暂存区通过<code>git add</code>命令，暂存区提交到本地仓库通过<code>git commit</code>命令，两者的结合被称为<strong>提交</strong>。</p>
+</li>
+<li>
+<p>在Git中，文件存在四种形式：<strong>未跟踪</strong><code>Untrack</code>、<strong>未修改</strong><code>Unmodified</code>、<strong>已修改</strong><code>Modified</code>和<strong>已暂存</strong><code>Staged</code>。</p>
+<ol>
+<li>未跟踪
+<blockquote>
+<p>新创建的未被Git管理起来的文件</p>
+</blockquote>
+</li>
+<li>未修改
+<blockquote>
+<p>已经被Git管理起来的但还没被修改过的文件</p>
+</blockquote>
+</li>
+<li>已修改
+<blockquote>
+<p>被Git管理起来且已被修改的文件</p>
+</blockquote>
+</li>
+<li>已暂存
+<blockquote>
+<p>已经提交到暂存区<code>index</code>的文件</p>
+</blockquote>
+</li>
+</ol>
+<p>具体说明如下图：<br>
+<img src="./Git_note_files/屏幕截图 2024-01-25 172204.png" alt="文件流程"></p>
+</li>
+</ul>
+<h1 id="4常用的git命令">4.常用的Git命令 </h1>
+<ol>
+<li>
+<p><code>git config --global user.name "用户名"</code><br>
+* 初始化的时候设置用户名</p>
+</li>
+<li>
+<p><code>git config --global user.mail 邮箱地址</code><br>
+* 初始化的时候设置邮箱地址</p>
+<blockquote>
+<ul>
+<li>
+<p>不写或者写作<code>--local</code>是本地配置的意思，只对本地仓库有用；<code>--global</code>是全局配置，对所有仓库都生效；<code>--system</code>是系统配置，对所有用户都生效。</p>
+</li>
+<li>
+<p>若用户名中没有空格，不用双引号也是可以的</p>
+</li>
+</ul>
+</blockquote>
+</li>
+<li>
+<p><code>git config --global credential.helper store</code><br>
+*保存用户名和密码，这样就不用每次都输入了</p>
+</li>
+<li>
+<p><code>git config --global --list</code><br>
+*查看git的配置信息</p>
+</li>
+<li>
+<p><strong>创建仓库</strong></p>
+<blockquote>
+<p>创建仓库有两种办法，第一种是初始化一个空白库，第二种是从他处克隆一个现成的仓库。</p>
+</blockquote>
+<ol>
+<li>
+<p><em>init</em><br>
+首先创建一个文件夹(目录)，后边创建的库在该目录下运行。创建可以用<strong>命令行语句</strong><code>mkdir 目录名</code>，之后用<code>cd 目录名</code>打开以方便在目录底下进行。<br>
+随后使用<code>git init</code>创建库，默认的初始库名字叫<code>main</code>即主干(类似于树。即表示当前分支的名称，分支是当前演化的位置)。<br>
+初始化库后，会在当前目录生成<code>.git</code>文件，但直接通过<code>ls</code>命令则无法查看，需要使用加参数<code>ls -a</code>来查看全部文件(包括隐藏文件)。<br>
+<strong>Warning!</strong></p>
+<ol>
+<li><code>.git</code>文件存放了Git仓库内的所有数据。可以用<code>cd .git</code>和<code>ls -altr</code>来组合查看。</li>
+<li>通常不要去破坏<code>.git</code>文件，因为它是仓库关键的配置文件，破坏它们会破坏Git仓库。而如果把<code>.git</code>文件删掉(<code>\rm -rf .git</code>)则整个仓库都会被删除。</li>
+</ol>
+<p>我们可以直接在文件夹里创建我们想要的仓库，用<code>git init 仓库名</code>的语法即可。这同样会在新建成的库内生成<code>.git</code>文件,并且分支判断会回到<code>main</code>分支(即主干)。</p>
+</li>
+<li>
+<p><em>clone</em><br>
+<code>clone</code>是一种用于克隆(复制)他人或者远程Git仓库到本地的命令。它将仓库拷贝到本地，使开发者能够查看后修改该项目，并同步了仓库的所有代码和历史记录，也在本地创建了一个一模一样的副本。<br>
+它的格式是<code>git clone [url]</code>,<code>url</code>是远程仓库的链接地址。这会在本地创建一个同名的一模一样文件夹。文件夹内是复制的库，包含全部的分支和历史记录。你可以使用其他的Git命令(如 <code>git checkout</code>、<code>git pull</code>)对本地仓库进行操作。</p>
+<ol>
+<li><code>cd ..</code>可以返回上一级文件夹或者退出库</li>
+<li><code>ls -ltr</code>或者<code>ls -str</code>可以查看文件夹内可见文件，<code>ls -atr</code>可以查看文件夹内所有文件。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><code>git status</code><br>
+* <strong>查看当前所在的分支和分支内的文件情况</strong>。若写作<code>git status -s</code>表示查看状态这个命令的省略模式（它的返回会有<code>??</code>，第一列表示暂存区的状态，第二列表示工作区的状态）。</p>
+</li>
+<li>
+<p>在当前库的文件夹下，<code>echo"文字内容"</code>+<code>文件名.文件格式</code>可以用于创建一个文本文件，之后可以用<code>ls</code>打开并<strong>用<code>cat 文件名.文件格式</code>的方式查看文件内容</strong></p>
+</li>
+<li>
+<p><code>ls</code>可以直接查看工作区存在的文件，<code>git ls-files</code>指令查看暂存区存在的文件；<code>cat</code>命令可以查看文件的具体内容<br>
+<img src="./Git_note_files/g2.png" alt="g2"></p>
+</li>
+<li>
+<p><strong>暂存与删除</strong></p>
+</li>
+<li>
+<p><code>git add</code><br>
+使文件添加到暂存区(被跟踪)</p>
+</li>
+<li>
+<p><code>git add .</code><br>
+将所有文件都添加到暂存区</p>
+</li>
+<li>
+<p><code>git reset</code><br>
+使文件退出暂存进入工作区</p>
+</li>
+<li>
+<p><code>git rm</code><br>
+删除工作区文件并将这次删除放入暂存区</p>
+</li>
+<li>
+<p><code>git rm -f</code><br>
+删除工作区和暂存区文件并将这次删除存入暂存区(防止报错)</p>
+</li>
+<li>
+<p><code>git rm --cached</code><br>
+删除暂存区文件，保留工作区文件并将这次删除写入暂存区</p>
+</li>
+<li>
+<p><code>rm+文件名</code><br>
+删除工作区的文件</p>
+</li>
+<li>
+<p><code>git commit -m</code><br>
+提交暂存区的文件到仓库中，是文件真正保存起来</p>
+<blockquote>
+<p>若没有<code>-m</code>这个默认标志,则会进入一个交互界面(通常是<code>vim</code>)手动设置信息存入,非常麻烦<br>
+<strong><code>vim</code>是一种非常强大的文本编辑器.用方向键来使光标移动,按<code>i</code>进入编辑模式,可以在指定的地方输入编辑信息,按<code>Esc</code>回到命令模式,输入<code>:wq</code>保存退出就完成了</strong></p>
+</blockquote>
+</li>
+<li>
+<p><code>git commit -am 文件名</code><br>
+同时完成添加至暂存区和提交至仓库两个操作</p>
+</li>
+<li>
+<p><code>git diff</code><br>
+用于查看文件在工作区、暂存区以及版本库之间的差异<br>
+它的输出分为5个部分：<br>
+变更文件名、被<code>哈希算法</code>转换为40位的哈希值的文件内容(可能只显示前几位，最后的几位数字代表<code>文件的权限</code>)、修改的内容(<strong>红色原来绿色现在</strong>)。若没有内容代表工作区和暂存区的内容一致。</p>
+<blockquote>
+<p><code>git diff HEAD</code>可以比较版本库和工作区之间的差异，<code>HEAD</code>指向分支的<strong>最新提交结点</strong>，可以拿不同次提交的哈希ID来和<code>HEAD</code>比较。<code>Git</code>还允许用<code>HEAD~n</code>或者<code>HEAD^n</code>来表示当前的上<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.4306em;"></span><span class="mord mathnormal">n</span></span></span></span>个结点的ID。<br>
+<code>git diff --cached</code>可以查看暂存区和版本库之间的差异</p>
+</blockquote>
+</li>
+<li>
+<p><code>vi 文件名</code><br>
+用于打开<code>vim</code>界面修改文件信息，具体操作同上.</p>
+</li>
+<li>
+<p><code>git reset</code></p>
+<blockquote>
+<p>+<code>--soft</code>:使分支回退到之前的一个版本，但是保留工作区和暂存区的所有修改内容</p>
+</blockquote>
+<blockquote>
+<p>+<code>--hard</code>:使分支回退到之前的一个版本且放弃工作区和暂存区的所有修改内容，可尾随<code>HARD^</code>来特指上一个版本</p>
+</blockquote>
+<blockquote>
+<p>+<code>--mixed</code>:介于前两者之间，回退到之前的某个版本但是只保留工作区的修改内容(<strong>默认参数</strong>)<br>
+<img src="./Git_note_files/g1.png" alt="g1"></p>
+</blockquote>
+</li>
+<li>
+<p><code>git log</code>(--<code>online</code>\ <code>local</code>)：<strong>查看提交历史</strong></p>
+</li>
+<li>
+<p><code>echo "文本信息" &gt; 文件名</code><br>
+可以临时性创建一个文件或者对文件追加内容.</p>
+</li>
+<li>
+<p><code>ls -al</code>: 查看库文件夹内的全部文件，包括隐藏的。</p>
+</li>
+</ol>
+<h1 id="5-gitignore">5. ".gitignore" </h1>
+<ul>
+<li>用于使文件夹中的有些文件有选择地不上传到库里而暂存到<code>.gitignore</code>中(也就是<strong>忽略</strong>)。<strong><code>.gitignore</code>需要自己创建</strong></li>
+<li><img src="./Git_note_files/g3.png" alt="g3"></li>
+<li>应该忽略哪些文件？
+<ol>
+<li>系统或者软件自动生成的文件</li>
+<li>编译产生的中间文件和结果文件
+<blockquote>
+<p>如Java生成的<code>.class</code>文件和C语言生成的<code>.o</code>文件)</p>
+</blockquote>
+</li>
+<li>运行时生成的日志文件、缓存文件、临时文件</li>
+<li>涉及身份、密码、口令、密钥等敏感信息文件.</li>
+</ol>
+</li>
+<li><code>.gitignore</code>会接收我们提交给<code>Git</code>的模式，模式体现的这些文件不会被提交到版本库中去。<strong><code>.gitignore</code>相当于一个临时的回收站</strong></li>
+<li>【Bug】:<code>.gitignore</code>无法对已经被添加到库中文件发挥作用，只对工作区和暂存区的内容有效。</li>
+<li><strong>若库所在的文件夹中有空文件夹，那么该文件夹将不会被纳入<code>git</code>的版本控制中</strong>。当然可以用<code>mkdir 文件夹名</code>来创建新的文件夹</li>
+<li>若要只在库内删除应屏蔽的文件，可以用<code>git rm --cached 文件名</code>。用<code>git rm 文件名</code>会把库、本地的文件全删除.</li>
+<li><strong>具体步骤</strong>：
+<blockquote>
+<ol>
+<li>若要在库\分支中屏蔽相关文件，可以将文件名添加到<code>.gitignore</code>中，这会使库中对应文件名的文件被忽略。</li>
+<li>若要一次性屏蔽所有的相关文件(<a href="http://xn--5nqx8l18dyvpo31a.xxx/">如哪类文件.xxx</a>)，可以使用<strong>通配符</strong>来匹配所有以后缀结尾的文件,如<code>*.log</code>等。</li>
+<li>若要一次性屏蔽一个文件夹，可以用<code>文件夹名\</code>的格式</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<hr>
+<ul>
+<li><code>.gitignore</code>文件的匹配规则
+<ul>
+<li>它是<strong>从上到下逐行匹配</strong>，每一行代表一个忽略模式(rule pattern)</li>
+</ul>
+</li>
+<li>常用的一些格式
+<blockquote>
+<ol>
+<li>空格或者<code>#</code>开头的行会被<code>Git</code>忽略。一般<strong>空格用于可读性的分割，#用于注释信息</strong></li>
+<li>使用标准的<code>glob</code>模式(<code>shell</code>所使用的简化了的正则表达式)进行匹配，例如：
+<ol>
+<li><code>*</code>代表通配任意个字符</li>
+<li><code>?</code>代表通配单个字符</li>
+<li><code>[···]</code>表示匹配列表中含有的单个字符，如:[abc]代表a/b/c</li>
+<li><code>[]</code>中间可以用短中线<code>-</code>连接，代表两端所框定的全部成员都选中。如[a-z]表示全部小写字母</li>
+<li><code>**</code>代表匹配任意的中间目录</li>
+<li><code>！</code>表示取反，要忽略指定模式以外的文件或者目录</li>
+</ol>
+</li>
+</ol>
+</blockquote>
+</li>
+<li>详细规则见于<code>Git</code>官网的<a href="https://git-scm.com/docs/gitignore">相关网址</a></li>
+<li>例如：<br>
+<img src="./Git_note_files/g4.png" alt="g4"><br>
+<img src="./Git_note_files/g5.png" alt="g5"></li>
+</ul>
+<h1 id="6如何使用github来管理我们的代码">6.如何使用Github来管理我们的代码 </h1>
+<ul>
+<li>将本地仓库和Github关联起来<br>
+<img src="./Git_note_files/g6.png" alt="g6"></li>
+<li>远程仓库地址的两种方式：<code>HTTPS</code>和<code>SSH</code>。
+<ol>
+<li>
+<p>HTTPS</p>
+<blockquote>
+<p>在本地代码<code>push</code>到远程仓库的时候需要验证用户名和密码(官方已放弃)<br>
+地址格式：<code>https://github.com/····/xxx.git</code></p>
+</blockquote>
+</li>
+<li>
+<p>SSH</p>
+<blockquote>
+<p>不用验证用户名和密码，但要在Github上添加对应地址的<code>SSH公钥</code>的配置<br>
+<strong>使用SSH方式必须要配置SSH密钥。</strong></p>
+</blockquote>
+<blockquote>
+<p>给Github配置SSH密钥：</p>
+<ol>
+<li>打开到库文件夹的根目录</li>
+<li><code>cd .shh</code></li>
+<li><code>ssh-keygen -t 协议方式 -b 指定生成大小</code>  %例如<code>rsa</code>协议方式和<code>4096</code>大小</li>
+<li>进入下一步设置密钥名称。若是第一次访问，则可以用<strong>回车</strong>跳过，系统将自动在<code>.shh</code>目录下生成<code>id_rsa</code>的密钥文件；<br>
+若已经生成过<code>shh</code>密钥，<strong>千万不要回车</strong>，因为它会覆盖掉原来的<code>shh</code>密钥信息且不可逆。对此我们应该输入设置一个新的文件名和密码。此时库中会生成<code>文件名</code>和<code>文件名.pub</code>两个文件。其中<code>文件名</code>文件是生成的私钥，<code>文件名.pub</code>文件是生成的公钥。</li>
+<li>复制<code>文件名.pub</code>中的公钥文件，到个人账号的<code>Settings</code>中的<code>SSH and       GPG keys</code>的<code>New SSH Keys</code>的选项中添加我们创建的文件名和公钥文件并保存。</li>
+<li>若是第一次访问或者没有更改<code>SHH</code>密钥文件名，则不用操作；<br>
+若更改了文件名，我们需要创建一个<code>config</code>文件，语法为<code>tail -5 config</code><br>
+.<strong>在<code>config</code>文件内输入以下5行信息：<br>
+# github<br>
+Host <a href="http://github.com/">github.com</a><br>
+HostName <a href="http://github.com/">github.com</a><br>
+PreferredAuthentications publickey<br>
+TdentityFile ~/.ssh/文件名</strong></li>
+<li>这样我们就使得本地库和Github之间建立了联系。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>地址格式：<code>git@github.com:····/·xxx.git</code></p>
+</blockquote>
+</li>
+</ol>
+</li>
+<li>推送与拉取
+<ul>
+<li><code>git push</code>:推送到远程仓库</li>
+<li><code>git pull &lt;远程仓库名&gt; &lt;远程分支名&gt;:&lt;本地分支名&gt;</code> : <strong>抓取到本地仓库来</strong><br>
+<em><code>pull</code>之后会有一个分支文件合并的操作。若文件不一致，则会发生<code>冲突</code>，此时需要我们手动解决冲突</em></li>
+<li><code>git clone 仓库地址</code>：从远程仓库复制一个完整的库到本地</li>
+<li><code>git fetch</code>: 从远程仓库获取修改，但不会自动合并到本地仓库中，需要手动处理</li>
+</ul>
+</li>
+<li>将本地仓库与Github上创建的远程仓库关联起来
+<ul>
+<li><code>git remote add &lt;shortname&gt; &lt;url&gt;</code>: 将远程仓库以一个`别名关联到本地</li>
+<li><code>git remote -v</code>: 查看当前仓库所对应的远程仓库的别名和地址</li>
+<li><code>git branch -M &lt;name&gt;</code>: 指定当前分支名称</li>
+<li><code>git push -u &lt;shortname&gt; &lt;name&gt;</code>: 将当前仓库分支与远程仓库分支关联起来</li>
+</ul>
+</li>
+</ul>
+<h1 id="7其他的git托管平台">7.其他的git托管平台 </h1>
+<h4 id="1-gitee">1. Gitee </h4>
+<ul>
+<li><strong>码云</strong>，属于国内平台</li>
+<li>使用起来基本和Github一样</li>
+</ul>
+<h4 id="2-gitlab">2. Gitlab </h4>
+<ul>
+<li>又叫<code>极狐</code></li>
+<li>私有化部署，可以自己搭建服务器</li>
+<li>使用起来同样也是：
+<ol>
+<li>在远程创建仓库</li>
+<li>将仓库克隆到本地</li>
+<li>对应查看远程仓库的地址并且建立关联</li>
+<li>修改本地仓库</li>
+<li>将本体仓库推送至远程仓库</li>
+</ol>
+</li>
+</ul>
+<h1 id="8gui图形化工具">8.GUI(图形化工具) </h1>
+<ul>
+<li>Github Desktop
+<blockquote>
+<p>一般情况下基本够用,但是只能用在<code>Github</code>中</p>
+</blockquote>
+</li>
+<li><strong>Sourcetree</strong>(推荐)</li>
+<li><strong>GitKraken</strong>(少功能)</li>
+<li>Gitlen
+<blockquote>
+<p>支持在<code>vscode</code>中使用图形化工具</p>
+</blockquote>
+</li>
+<li>以下以如何在<code>vscode</code>中使用<code>Git</code>举例：
+<ul>
+<li>在<code>vscode</code>中打开文件夹，除了可以用软件打开，还可以用命令行的<code>code 地址</code>的格式打开</li>
+<li>在源码管理器中：<br>
+<img src="./Git_note_files/g7.png" alt="g7"></li>
+</ul>
+</li>
+<li><code>Git</code>支持用<code>alias &lt;别名/助记词&gt;="取代内容"</code>的语句来简略文本命令，类似于C中的<code>defined</code>指代语句。<pre data-role="codeBlock" data-info="git" class="language-git git"><code>如：
+alias graph=<span class="token string">"git log --online --graph --decorate --all"</span> 
+</code></pre></li>
+</ul>
+<h1 id="9分支branch">9.分支(Branch) </h1>
+<ul>
+<li>类似于树的分叉，<strong>非常适合多个开发人员同时开发同一个项目</strong>。每个开发人员可以在主干之外开辟自己的分支独立进行开发，最后再合并进入主干即可</li>
+<li>也可以在一个分支上进行新功能的开发，或者建立一个问题修复的分支来处理一些bug和缺陷。这样可以<strong>让主线代码仓库处在一个随时可用的比较稳定的状态中</strong>，不会影响到其他功能的开发和测试，保证项目的正常运行和高效协作。</li>
+<li>常用的分支命令
+<ol>
+<li><code>git branch</code>:查看当前仓库内的所有分支情况(或者所在哪个分支上)</li>
+<li><code>git branch &lt;branchname&gt;</code>:创建一个新的分支</li>
+<li><code>git checkout &lt;branchname&gt;</code>:切换收到想切换的对应分支上
+<blockquote>
+<p>除此以外，<code>git checkout</code>还可以用于恢复文件或者让目录回到之前的某一个状态。其文本命令也是同切换，而系统在接收到相关文本命令时会默认执行切换分支操作。故<strong>当分支名和文件名相同时，会造成严重的歧义</strong>。故不推荐再用<code>checkout</code>关键词来实施分支切换</p>
+</blockquote>
+</li>
+<li><code>git switch &lt;branchname&gt;</code>:更加明确的分支切换命令，基本功能与上者一致。(<strong>推荐使用</strong>)</li>
+<li><code>git merge &lt;将要被合并的分支名&gt;</code>：<strong>将对应的分支合并到当前所在的分支中来</strong>。每一次合并<code>git</code>会自动帮我们生成一次提交，我们需要补充提交的说明信息(还是使用<code>vim</code>输入，用<code>wq</code>保存)
+<blockquote>
+<p>当一个分支合并到另一个分支中后，只是分支的内容完成了合并，但分支自身还是存在的(只是空了)。若要完全消除分支的存在，可以使用<code>git branch -d &lt;branchname&gt;</code>的命令来彻底删除这个分支</p>
+</blockquote>
+</li>
+<li><code>git log --graph --online --decorate --all</code>:可以在命令行中查看仓库对应的分支图</li>
+<li><code>git branch -D &lt;branchname&gt;</code>: 若分支没完成合并就想要删除分支，<strong>相关关键字需保留大写</strong>来强制删除分支</li>
+<li><code>git merge --abort</code>: 终止之前的合并操作，当然已经删了的话没法挽回</li>
+<li>*变基(<code>Rebase</code>)
+<ul>
+<li>在<code>Git</code>中，每一条分支都有一个指针指向<strong>当前分支的最新提交记录</strong>。</li>
+<li>如果是<code>merge</code>操作,每一次合并只是像<code>溪流汇集到主干</code>中一样，只有合并后的信息共用，但合并前的内容除非删除，不然仍是保留的。<br>
+<img src="./Git_note_files/g9.png" alt="g9"><br>
+<strong>而<code>rebase</code>换基命令则是将分支真正融合，所有数据合成一脉</strong>，从分叉点嫁接移植在一起。<br>
+<img src="./Git_note_files/g8.png" alt="g8"></li>
+<li><strong><code>rebase</code>操作的顺序会影响结果</strong>，例如A支合并到B支，结果是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>B</mi><mo>→</mo><mi>A</mi><mo>→</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">B\rightarrow A\rightarrow \cdots</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.313em;"></span><span class="minner">⋯</span></span></span></span>; 而B支合并到A支，结果是<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>A</mi><mo>→</mo><mi>B</mi><mo>→</mo><mo>⋯</mo></mrow><annotation encoding="application/x-tex">A\rightarrow B\rightarrow \cdots</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal">A</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.6833em;"></span><span class="mord mathnormal" style="margin-right:0.05017em;">B</span><span class="mspace" style="margin-right:0.2778em;"></span><span class="mrel">→</span><span class="mspace" style="margin-right:0.2778em;"></span></span><span class="base"><span class="strut" style="height:0.313em;"></span><span class="minner">⋯</span></span></span></span></li>
+</ul>
+</li>
+<li>关于<code>merge</code>和<code>rebase</code>的分析：
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Merge</th>
+<th>Rebase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>优点</td>
+<td>不会破坏原分支的提交记录，方便回溯和查看</td>
+<td>不会新增额外的提交记录，形成线性历史，比较直观和干净</td>
+</tr>
+<tr>
+<td>缺点</td>
+<td>会产生额外的节点，分支图比较复杂</td>
+<td>会改变提交历史，改变了当前分支<code>branch out</code>的节点，<strong>应避免在共享分支使用</strong></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+</li>
+<li>分支的冲突和解决
+<ul>
+<li>当多个分支同时修改同一个文件的同一段信息并合并分支时，修改会产生冲突<code>conflict</code>，仓库<code>repository</code>会发生矛盾。
+<blockquote>
+<p><code>git commit -a -m &lt;filename&gt;</code>或者<code>git commit -am &lt;filename&gt;</code>支持一次性完成暂存和提交两步的操作，但是要求是这个文件之前出现在仓库中过。<strong>如果是全新创建的文件，则不能使用<code>-a</code>说明符，需要一步一步完成暂存和提交操作</strong></p>
+</blockquote>
+</li>
+<li>发生冲突后，可以使用<code>git status</code>来查看冲突文件的列表，或使用<code>git diff</code>命令来查看冲突的具体内容(用<code>&lt;&lt;&lt;&lt;&lt;</code>来代表合并到的分支的内容；用<code>&gt;&gt;&gt;&gt;&gt;</code>来代表我们要合并的分支的内容),接着需要我们自己手动判断和解决冲突内容，再执行合并。</li>
+</ul>
+</li>
+</ul>
+<h1 id="10工作流模型">10.工作流模型* </h1>
+<ul>
+<li>对于分支(<code>branch</code>)使用来说比较好的模型和流程，可以使我们的工作更高效和更有条理。</li>
+<li>以下介绍一些模型：</li>
+</ul>
+<h3 id="1gitflow">1.<strong>GitFlow</strong> </h3>
+<p><img src="./Git_note_files/g10.webp" alt="g10"><br>
+这是一种最为常用的工作流模型。它的常见分支有<strong>5个</strong>:</p>
+<ol>
+<li>生成分支<code>master</code>\ <code>main</code><br>
+<code>master</code>分支是仓库的主分支，这个分支包含最近发布到生产环境的代码，最近发布的<code>release</code>， 这个分支只能从其他分支合并，<strong>不能在这个分支直接修改‌</strong>。每次合并分支都建议生成一个新的<strong>版本号</strong>以方便跟踪和回溯，可以用<code>git tag</code>命令来对<code>main</code>分支标记版本号。<br>
+版本号的使用一般也是有规定的，例如一种常用的：<br>
+<img src="./Git_note_files/g15.png" alt="g15"></li>
+<li>补丁分支<code>hotfix</code><br>
+当我们在生产环境发现新的Bug时候，我们需要基于<code>master</code>分支创建一个<code>hotfix</code>分支，<strong>然后在<code>hotfix</code>分支上修复bug</strong>，完成<code>hotfix</code>后，我们要把<code>hotfix</code>分支<strong>合并回</strong><code>master</code>和<code>develop</code>分支‌</li>
+<li><strong>发布</strong>分支<code>release</code><br>
+当你需要<strong>发布一个新功能</strong>的时候，要基于<code>develop</code>分支创建一个<code>release</code>分支，在<code>release</code>分支<strong>测试</strong>并修复bug，完成<code>release</code>后，把<code>release</code>合并到<code>master</code>和<code>develop</code>分支‌</li>
+<li><strong>开发</strong>分支<code>develop</code><br>
+这个分支是我们的<strong>主开发分支</strong>，包含所有要发布到下一个<code>release</code>的代码，这个主要合并于其他分支，比如<code>feature</code>分支‌</li>
+<li><strong>功能</strong>分支<code>feature</code><br>
+<code>feature</code>分支主要是<strong>用来开发一个新的功能</strong>，一旦开发完成，我们<strong>合并回</strong><code>develop</code>分支进入下一个<code>release‌</code><br>
+以下介绍<code>GitFlow</code>的具体步骤：
+<blockquote>
+<p><img src="./Git_note_files/g11.png" alt="g11"><br>
+<img src="./Git_note_files/g12.png" alt="g12"><br>
+<img src="./Git_note_files/g13.png" alt="g13"></p>
+</blockquote>
+</li>
+</ol>
+<p>对于<code>Windows</code>来说，我们可以用：</p>
+<pre data-role="codeBlock" data-info="git" class="language-git git"><code>$ wget -q -O - --no-check-certificate https://github.com/nvie/gitflow/raw/develop/contrib/gitflow-installer.sh | bash
+</code></pre><p>来下载安装。</p>
+<ul>
+<li>具体使用如下：<br>
+<img src="./Git_note_files/g14.png" alt="g14"></li>
+<li>分支按照使用寿命又可以分为两种：
+<ol>
+<li><strong>主要分支，包含<code>main</code>分支和<code>develop</code>分支</strong>。它们是项目的<strong>核心</strong>分支。</li>
+<li>辅助分支，即剩下的三类分支。他们在完成分支的相应任务后就可以删除了</li>
+</ol>
+</li>
+</ul>
+<h3 id="2-github-flow">2. Github Flow </h3>
+<ul>
+<li>相较于<code>GitFlow</code>模型，它更加简单明了。</li>
+<li><code>GitFlow</code>适用于技术水平适中，有一定开发经验和流程的团队；<code>Github Flow</code>则更适用于技术水平比较高的团队或者<strong>开源项目</strong></li>
+<li>详细流程如下图：<br>
+<img src="./Git_note_files/g16.png" alt="g16">
+<ul>
+<li>只有一个<strong>长期存在的主分支</strong>和其余的开发分支。主分支上的代码是<strong>可以直接部署</strong>(<code>dispaly</code>)到生产环境中的。为了避免冲突，一般会对主分支设置<strong>分支保护</strong>，禁止成员随意往主分支上进行提交。</li>
+<li>开发人员一般直接从主分支上分离出自己的分支进行开发和测试，在本地分支上提交代码……等到开发完成之后，可以发起一个<code>Pull Request</code>(简称<code>PR</code>)的<strong>拉请求</strong>(拉到主干上)或者<strong>合并请求</strong>。团队成员们会对请求的代码进行<strong>评审</strong><code>Review</code>。如果没有问题就可以将这个<code>PR</code>发布和合并到主分支中
+<blockquote>
+<p>在<code>GitLab</code>码云里也有类似的操作，但是这个操作叫<code>Merge Request</code>\ <code>MR</code></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3分支规范">3.分支规范 </h3>
+<ol>
+<li>分支命名
+<ul>
+<li>版本发布应该根据版本号命名</li>
+<li>功能性分支应该根据其功能和任务命名</li>
+<li>修补补丁个错误应该根据其问题编号命名</li>
+</ul>
+</li>
+<li>分支管理
+<ul>
+<li>定期合并已经验证成功或者失去意义的分支，及时删除已经合并的分支</li>
+<li>保持合适的分支数量</li>
+<li>确保及时将功能性分支合并进主分支</li>
+<li><strong>要为分支设置合适的管理权限</strong></li>
+</ul>
+</li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  </body></html>
