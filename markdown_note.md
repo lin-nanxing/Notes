@@ -356,3 +356,8 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
   ---
 
 - *具体的公式使用逻辑还要看Latex的相关内容后使用，这会在Latex的笔记中呈现*
+
+# 视频插入
+```html
+<iframe src="<url_address>" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+```
