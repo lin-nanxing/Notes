@@ -40,6 +40,16 @@ int main(){
 ```
 - 用两行```来框住代码部分。如果写的代码是某种语言，则可以在第一行的末尾加上这种语言的名字，则vscode会自动执行语言相应的高亮语法，把相应的字段用颜色表示出来
 如下边这个
+```
+```java
+public class MyClass {
+  public static void main(String[] args) {
+    System.out.println("Hello World");
+  }
+}
+```
+```
+结果为：
 ```java
 public class MyClass {
   public static void main(String[] args) {
