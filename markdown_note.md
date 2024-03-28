@@ -7,12 +7,12 @@ ___
 - 也可以用文字下加虚线的方式来实现一二级标题，加====是一级标题，加----是二级标题
   
   如以下表示
-```
-一级标题 
-======== 
-二级标题
---------
-```
+  ```
+  一级标题 
+  ======== 
+  二级标题
+  --------
+  ```  
 - 结果为：
 
 一级标题 
@@ -40,15 +40,14 @@ int main(){
 ```
 - 用两行```来框住代码部分。如果写的代码是某种语言，则可以在第一行的末尾加上这种语言的名字，则vscode会自动执行语言相应的高亮语法，把相应的字段用颜色表示出来
 如下边这个
-```
-```java
-public class MyClass {
-  public static void main(String[] args) {
-    System.out.println("Hello World");
-  }
-}
-```
-```
+
+> ```java
+> public class MyClass {
+>  public static void main(String[] args) {
+>  System.out.println("Hello World");
+> }
+>}
+> ```
 结果为：
 ```java
 public class MyClass {
@@ -57,6 +56,7 @@ public class MyClass {
   }
 }
 ```
+
 -或者可以靠代码块换行并缩进一个tab或者至少4个空格来使用  
 如下边这个   
 
@@ -90,15 +90,39 @@ public class MyClass {
 
 - 也可以用-、+、*来表示无序列表，但每一次只能使用一种。它本身表示的内容重要性不分先后。无向
   
-# 5.加粗和倾斜
-- 用两个*框住文本来表示倾斜，用两个**框住文本来表示加粗
-- 用两个***来表示又加粗又倾斜
+# 5.加粗、倾斜和标记
+- 用两个`*`框住文本来表示倾斜，用两个`**`框住文本来表示加粗。
+- 用两个`***`来表示又加粗又倾斜。
+- 可以用`<big>···</big>`的方法来使内容大小变大，反之可以用`<small>···</small>`的方法来使内容大小变小。
+- 可以使用两个`==`框住文本来表示黄色高亮，或者`<mark>···</mark>`也能达到相同的效果
+- 可以使用`<u>···</u>`的方法来给文字内容加上下划线。
 
 如下边的几个内容
+```Markdown
+1. 大白菜
+2. *大白菜*
+3. **大白菜** 
+4. <big>大白菜</big>
+5. <small>大白菜</small>
+6. ==大白菜==
+7. <u>大白菜</u>
+```
 
 1. 大白菜
 2. *大白菜*
 3. **大白菜** 
+4. ***大白菜***
+5. <big>大白菜</big>
+6. <small>大白菜</small>
+7. ==大白菜==
+8. <u>大白菜</u>  
+- 如果我们想限定高亮部分的颜色，可以采用html的`<div>`和`<span>`标签。格式为：  
+  ```html
+  1. <div style="background-color: RGB色号">···</div>  
+  2. <span style="background-color: RGB色号">···</span>
+  ```
+  常见的RGB色号有99FF99、00FF00、CC0000、FF0000、000099、0080FF、FF00FF、FFFFFF、FFFF00
+
 
 # 5.换行
 - 可以用文本后加两个空格再加一个换行来表示markdown中的换行
@@ -127,6 +151,11 @@ public class MyClass {
 - 要创建分割线，要在单独一行上使用三个或多个(***)、(---)、(___)，且不能包含其他内容。
   
 如以下内容  
+```markdown
+***
+---
+___  
+```
 ***
 ---
 ___  
@@ -375,9 +404,67 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 - *具体的公式使用逻辑还要看Latex的相关内容后使用，这会在Latex的笔记中呈现*
 
 # 21.视频插入
+格式是： 
 ```html
 <iframe src="<url_address>" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 ```
 
 # 22.绘制流程图
-- 可以复制以下代码使用 typora 的源码模式粘贴到markdown中查看效果：
+- 使用Markdown自带的编辑器可以使用`mermaid`拓展
+- 初始代码以`graph<布局方向>`开头，其中的<布局方向>有四种，分别是：  
+  > 1. <mark>TB</mark>（Top Bottom） 表示从上向下布局
+  > 2. ==BT==  表示从下当上布局  
+  > 3. ==LR==（Left Right）表示从左到右布局  
+  > 4. ==RL==  表示从右到左布局  
+- 关于流程图的结点，有圆形、矩形、菱形、圆形四种，它们的特点是：
+  1. 不同种类的括号对应不同的节点图形
+  2. 括号中的文字就是显示在节点中的描述
+  3. A、B、C、D这些字符是为节点取的名字，这个名字可以在之后反复利用（`在编程里这相当于定义变量`）。它的规则是：  
+     1. **(···)生成圆角矩形**
+     2. **[···]生成矩形**  
+     3. **{···}生成菱形**
+     4. ****
+     例如：  
+     > graph TB
+     > A(first of all)
+     > B[then]
+     > C{third}
+     > D((finallu))
+
+     它的结果是： 
+     ```mermaid
+      graph TB
+      A(first of all)
+      B[then]
+      C{third}
+      D((finallu))
+     ``` 
+    
+1. 关于链接结点(node)的线段，  
+    1. `-->`是带箭头线段(有向边)  
+    2. `-->|文字描述|`是带文字描述的有向边  
+    3. `-.->`带虚线的箭头线段(有向边)  
+    4. `==>`加粗的带箭头线段
+    5. `---`无向边\不带箭头的线段 
+- 例如：  
+   > graph TB
+    Start(开始) --> Open[打开冰箱门]
+    Open --> Put[把大象放进去]
+    Put[把大象放进去] --> IsFit{"冰箱小不小？"}
+    IsFit -->|不小| Close[把冰箱门关上]
+    Close --> End(结束)
+    IsFit -->|小| Change[换个大冰箱]
+    Change --> Open 
+
+  其结果是：  
+    ```mermaid  
+    graph TB
+    Start(开始) --> Open[打开冰箱门]
+    Open --> Put[把大象放进去]
+    Put[把大象放进去] --> IsFit{"冰箱小不小？"}
+    IsFit -->|不小| Close[把冰箱门关上]
+    Close --> End(结束)
+    IsFit -->|小| Change[换个大冰箱]
+    Change --> Open 
+    ```
+    
